@@ -1,0 +1,40 @@
+{
+    "name": "task-blockchainlab",
+    "version": "1.0.0",
+    "description": "Raspberry-sensors communication through zigbee",
+    "main": "/src/server.js",
+    "repository": "https://github.com/AurelioPa/TaskBlockChainLab.git",
+    "author": "Aurelio Paolillo",
+    "license": "UNLICENSED",
+    "scripts": {
+        "test": "jest --watchAll",
+        "start": "set NODE_PATH=./src&& nodemon --exec babel-node src/server.js --ignore dist/",
+        "webpack": "webpack -w -d"
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.0.3",
+        "babel-jest": "^24.9.0",
+        "eslint": "^6.8.0",
+        "eslint-plugin-react": "^7.18.0",
+        "eslint-plugin-react-hooks": "^2.3.0",
+        "jest": "^24.9.0",
+        "nodemon": "^2.0.2",
+        "react-test-renderer": "^16.12.0"
+    },
+    "dependencies": {
+        "@babel/core": "^7.8.3",
+        "@babel/node": "^7.8.3",
+        "@babel/plugin-proposal-class-properties": "^7.8.3",
+        "@babel/plugin-proposal-decorators": "^7.8.3",
+        "@babel/polyfill": "^7.8.3",
+        "@babel/preset-env": "^7.8.3",
+        "@babel/preset-react": "^7.8.3",
+        "babel-loader": "^8.0.6",
+        "ejs": "^3.0.1",
+        "express": "^4.17.1",
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0",
+        "webpack": "^4.41.5",
+        "webpack-cli": "^3.3.10"
+    }
+}
