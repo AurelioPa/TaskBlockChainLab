@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOMServer from "react-dom/server";
-import ServerApp from "components/ServerApp";
+import App from "components/App";
 
 export default function serverRender() {
-    return ReactDOMServer.renderToString(<ServerApp />);
+    return ReactDOMServer.renderToString(<App />);
 }

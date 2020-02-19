@@ -1,16 +1,13 @@
 body {
-    background-color: darkgreen;
+    background-color: #6dbf67;
+    padding-left: 33vw;
+    padding-top: 30vh;
 }
 
-h1 {
-    background-color: yellowgreen;
-    font-family: Arial, Helvetica, sans-serif;
-    color: royalblue;
+.paper {
+    background-color: #2a221d;
+    padding-top: 16vh;
     text-align: center;
-}
-
-p {
-    background-color: forestgreen;
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    color: snow;
+    width: 30vw;
+    height: 30vh;
 }
