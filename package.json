@@ -8,7 +8,8 @@
     "license": "UNLICENSED",
     "scripts": {
         "test": "jest --watchAll",
-        "start": "set NODE_PATH=./src&& nodemon --exec babel-node src/server.js --ignore dist/",
+        "win-start": "set NODE_PATH=./src&& nodemon --exec babel-node src/server.js --ignore dist/",
+        "start": "NODE_PATH=./src pm2 start src/server.js --watch --interpreter babel-node",
         "webpack": "webpack -w -d"
     },
     "devDependencies": {
@@ -34,6 +35,7 @@
         "babel-loader": "^8.0.6",
         "ejs": "^3.0.1",
         "express": "^4.17.1",
+        "pm2": "^4.2.3",
         "react": "^16.12.0",
         "react-dom": "^16.12.0",
         "webpack": "^4.41.5",
