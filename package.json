@@ -10,7 +10,7 @@
         "test": "jest --watchAll",
         "win-start": "set NODE_PATH=./src&& nodemon --exec babel-node src/server.js --ignore dist/",
         "start": "NODE_PATH=./src pm2 start src/server.js --watch --interpreter babel-node",
-        "stop": "pm2 start src/server.js",
+        "stop": "pm2 stop src/server.js",
         "webpack": "webpack -w -d"
     },
     "devDependencies": {
