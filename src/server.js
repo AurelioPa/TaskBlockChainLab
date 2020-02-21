@@ -8,6 +8,12 @@ app.use(express.static("dist"));
 
 app.set("view engine", "ejs");
 
+app.all("/", (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
+    next();
+});
+
 app.get("/", (req, res) => {
     const initialContent = serverRender();
     res.render("index", { initialContent });
