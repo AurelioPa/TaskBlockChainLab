@@ -1,0 +1,13 @@
+{
+    "1": {
+        "etag": "b2167f8cef81f607d94b3c481635fbec",
+        "hascolor": false,
+        "manufacturername": "Trust International B.V.",
+        "modelid": "ZLL-DimmableLigh",
+        "name": "Dimmerable",
+        "state": { "alert": "none", "bri": 0, "on": false, "reachable": false },
+        "swversion": "1000-0002",
+        "type": "Dimmable light",
+        "uniqueid": "00:15:8d:00:02:02:b9:13-01"
+    }
+}
