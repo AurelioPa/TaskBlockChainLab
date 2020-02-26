@@ -1,6 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import StateApi from "state-api";
 import App from "components/App";
 
-ReactDOM.hydrate(<App />, document.getElementById("mountNode"));
+const store = new StateApi(window.initialData);
+
+ReactDOM.hydrate(<App store={store} />, document.getElementById("mountNode"));

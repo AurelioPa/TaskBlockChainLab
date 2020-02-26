@@ -1,16 +1,9 @@
 import React from "react";
 
-import OnOff from "./OnOff";
-import LedButton from "./LedButton";
+import Item from "components/Item";
 
 export default class App extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            ledOn: true
-        };
-        this.handleClick = this.handleClick.bind(this);
-    }
+    state = this.props.store.getState();
 
     handleClick() {
         this.setState(prevState => {
@@ -21,11 +14,14 @@ export default class App extends React.Component {
     }
 
     render() {
-        return (
-            <div className="paper">
-                <LedButton handleClick={this.handleClick} />
-                <OnOff state={this.state} />
-            </div>
-        );
+        //console.info(this.state.lights);
+        // const lights = Object.keys(this.state.lights).map(item => {
+        //     <Item
+        //         key={item}
+        //         handleClick={this.handleClick}
+        //         state={this.state}
+        //     />;
+        // });
+        return <></>;
     }
 }
