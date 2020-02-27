@@ -37,8 +37,6 @@ export default class App extends React.Component {
                 lights: update
             };
         });
-
-        console.info(this.state);
     }
 
     render() {
