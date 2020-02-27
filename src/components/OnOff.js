@@ -18,7 +18,7 @@ const OnOff = props => {
         <ThemeProvider theme={theme}>
             <div>
                 <span style={{ color: "white" }}> OFF </span>
-                <Switch color="secondary" checked={props.state.ledOn} />
+                <Switch color="secondary" checked={props.state} />
                 <span style={{ color: "white" }}> ON</span>
             </div>
         </ThemeProvider>

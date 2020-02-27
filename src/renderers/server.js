@@ -9,11 +9,12 @@ import App from "components/App";
 
 const serverRender = async () => {
     const resp = await axios.get(`http://${host}:${port}/data`);
-    const store = new StateApi(resp.data);
+    const store = new StateApi(resp.data[0]);
 
     return {
-        initialContent: ReactDOMServer.renderToString(<App store={store} />),
-        initialData: resp.data
+        initialMarkup: ReactDOMServer.renderToString(<App store={store} />),
+        initialData: resp.data[0],
+        lightAddress: resp.data[1]
     };
 };
 

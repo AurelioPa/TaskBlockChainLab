@@ -5,5 +5,9 @@ import StateApi from "state-api";
 import App from "components/App";
 
 const store = new StateApi(window.initialData);
+const address = window.lightAddress;
 
-ReactDOM.hydrate(<App store={store} />, document.getElementById("mountNode"));
+ReactDOM.hydrate(
+    <App store={store} address={address} />,
+    document.getElementById("mountNode")
+);

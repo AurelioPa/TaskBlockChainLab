@@ -15,6 +15,7 @@ const theme = createMuiTheme({
 });
 
 const LedButton = props => {
+    const text = props.state.on ? "Light is ON" : "Light is OFF";
     return (
         <ThemeProvider theme={theme}>
             <Button
@@ -24,7 +25,7 @@ const LedButton = props => {
                 startIcon={<WbIncandescentOutlinedIcon />}
                 onClick={props.handleClick}
             >
-                Switch LED
+                {text}
             </Button>
         </ThemeProvider>
     );

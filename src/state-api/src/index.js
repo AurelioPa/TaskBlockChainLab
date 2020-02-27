@@ -1,6 +1,6 @@
 export default class StateApi {
     constructor(rawData) {
-        this.data = rawData.data;
+        this.data = rawData;
     }
 
     getState = () => {
