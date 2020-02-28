@@ -17,19 +17,29 @@ export default class App extends React.Component {
             const update = prevState.lights.map((it, index) => {
                 if (Object.keys(it)[index] === id) {
                     if (Object.values(it)[index].state.on) {
-                        axios.put("/lights/" + id, {
-                            on: false,
-                            bri: 254
-                        });
+                        axios
+                            .put("/lights/" + id, {
+                                on: false
+                            })
+                            .then(res => {
+                                if ("success" in res.data[0]) {
+                                    Object.values(it)[index].state.on = false;
+                                    this.forceUpdate();
+                                }
+                            });
                     } else {
-                        axios.put("/lights/" + id, {
-                            on: true,
-                            bri: 254
-                        });
+                        axios
+                            .put("/lights/" + id, {
+                                on: true
+                            })
+                            .then(res => {
+                                if ("success" in res.data[0]) {
+                                    Object.values(it)[index].state.on = true;
+                                    this.forceUpdate();
+                                }
+                            });
                     }
                 }
-                Object.values(it)[index].state.on = !Object.values(it)[index]
-                    .state.on;
                 return it;
             });
             return {
