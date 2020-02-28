@@ -1,0 +1,60 @@
+Raspberry:
+OS = Raspbian
+
+microSD -> wpa_supplicant:
+
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=IT
+
+network={
+        ssid="#########"
+        psk="********"
+		priority=1
+		id_str="######"
+}
+
+______________________________________________________________
+
+CONBEE 2:
+
+REST API ->
+
+https://dresden-elektronik.github.io/deconz-rest-doc/getting_started/
+
+______________________________________________________________
+
+NODE.JS:
+
+Server Render <- REST API calls to CONBEE2
+DOM Render <- Return initial state of found devices
+
+______________________________________________________________
+
+REACT:
+
+Components =
+	- App: the main component within initial state of each found devices
+	- Item: the component whitin the interaction whit a single existing device
+	- LedButton: the Item's sub-component, to switch the physical light
+	- OnOff: the Item's sub-component, to have the feedback from the physical light
+
+_______________________________________________________________
+
+How it works:
+
+START THE WEBSERVER:
+
+- Connect via Ssh to RaspBerry
+- go into /TaskBlockChainLab
+- run "yarn start"
+
+CLIENT SIDE:
+
+- Connect via the same LAN to the Raspberry IP, port 5555
+(-or connect to the public IP Address, port 4545)
+
+After that
+- push the button to switch the light
+
+	
