@@ -19,7 +19,8 @@ export default class App extends React.Component {
                     if (Object.values(it)[index].state.on) {
                         axios
                             .put("/lights/" + id, {
-                                on: false
+                                on: false,
+                                bri: 128
                             })
                             .then(res => {
                                 if ("success" in res.data[0]) {
@@ -30,7 +31,8 @@ export default class App extends React.Component {
                     } else {
                         axios
                             .put("/lights/" + id, {
-                                on: true
+                                on: true,
+                                bri: 254
                             })
                             .then(res => {
                                 if ("success" in res.data[0]) {

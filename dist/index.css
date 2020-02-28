@@ -6,8 +6,15 @@ body {
 
 .paper {
     background-color: #2a221d;
-    padding-top: 25vh;
+    padding-top: 15vh;
     text-align: center;
     width: 50vw;
     height: 30vh;
+}
+
+.slider {
+    width: 45%;
+    padding-left: 27%;
+    padding-top: 5%;
+    color: #6dbf67;
 }
