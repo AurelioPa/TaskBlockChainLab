@@ -7,8 +7,7 @@ export default class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            lights: [this.props.store.getState()],
-            address: this.props.address
+            lights: [this.props.store]
         };
         this.handleClick = this.handleClick.bind(this);
     }
@@ -18,12 +17,12 @@ export default class App extends React.Component {
             const update = prevState.lights.map((it, index) => {
                 if (Object.keys(it)[index] === id) {
                     if (Object.values(it)[index].state.on) {
-                        axios.put(this.state.address + id + "/state", {
+                        axios.put("/lights/" + id, {
                             on: false,
                             bri: 254
                         });
                     } else {
-                        axios.put(this.state.address + id + "/state", {
+                        axios.put("/lights/" + id, {
                             on: true,
                             bri: 254
                         });

@@ -1,11 +1,11 @@
 import express from "express";
 import { port } from "./config";
-//import data from "./gatewayData";
 import axios from "axios";
 
 import serverRender from "renderers/server";
 
 const app = express();
+app.use(express.json());
 
 let www = "";
 const pww = "ZGVsaWdodDoxMDEwMTAxMA==";
@@ -13,7 +13,7 @@ const config = {
     headers: { Authorization: "Basic " + pww }
 };
 let username = "";
-let dataw = {};
+let data = {};
 
 const findGateway = async () => {
     await axios
@@ -30,7 +30,6 @@ const findGateway = async () => {
         )
         .catch(err => {
             console.info(err);
-            // });
         });
 };
 
@@ -49,7 +48,7 @@ const lightsRequest = async () => {
     await axios
         .get(www + username + "/lights")
         .then(res => {
-            dataw = res.data;
+            data = res.data;
         })
         .catch(e => {
             console.info(e);
@@ -69,7 +68,13 @@ app.get("/data", async (req, res) => {
     await findGateway();
     await authenticate();
     await lightsRequest();
-    res.send([dataw, www + username + "/lights/"]);
+    res.send(data);
+});
+
+app.put("/lights/:id", (req, res) => {
+    axios
+        .put(www + username + "/lights/" + req.params.id + "/state", req.body)
+        .then(ires => res.send(ires.data));
 });
 
 app.listen(port, () => {
